@@ -1,0 +1,152 @@
+[1]: https://www.freecodecamp.org/news/common-accessibility-errors-and-how-to-fix-them/ ""
+[2]: https://www.w3schools.com/accessibility/accessibility_errors.php ""
+[3]: https://www.oneninedesign.net/blog/fix-accessibility-errors ""
+[4]: https://www.helenkeller.org/7-common-accessibility-errors-on-websites-and-how-to-fix-them/ ""
+[5]: https://webaim.org/resources/contrastchecker/ ""
+
+Certainly! Let's address the accessibility errors in your HTML code. I'll provide the corrected version below:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore Website</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        /* Navigation bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-right: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+        /* Book details section */
+        .book-details {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .book-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .book-author {
+            font-size: 16px;
+            color: #777;
+        }
+        .book-price {
+            font-size: 20px;
+            color: #333;
+        }
+        .book-rating {
+            font-size: 18px;
+            color: #f39c12;
+        }
+        /* User feedback form */
+        .feedback-form {
+            margin-top: 20px;
+        }
+        .feedback-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .feedback-submit {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Fix accessibility errors */
+        .sr-only {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Bookstore</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="book-details">
+            <h1 class="book-title">Book Title</h1>
+            <p class="book-author">Author: John Doe</p>
+            <p class="book-price">$19.99</p>
+            <p class="book-rating">Rating: 4.5/5</p>
+        </div>
+        <form class="feedback-form">
+            <label for="feedbackInput" class="sr-only">Your feedback</label>
+            <input type="text" id="feedbackInput" class="feedback-input" placeholder="Your feedback...">
+            <button type="submit" class="feedback-submit">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <div class="container">
+            © 2024 Bookstore. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
+```
+
